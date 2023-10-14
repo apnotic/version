@@ -46,6 +46,7 @@ end
 
 Rake::VersionTask.new do |v|
   v.with_git_tag = true
+  v.git_tag_prefix = nil
   v.with_gemspec = spec
 end
 

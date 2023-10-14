@@ -65,6 +65,12 @@ you, too.
     task.with_git_tag = true
   end
 
+If you prefer to add a prefix to the git tag:
+
+  Rake::VersionTask.new do |task|
+    task.git_tag_prefix = 'v'
+  end
+
 And if you want the VersionTask to automatically emit updated gemspecs on
 version-bumps, use the +with_gemspec+ flag.
 
