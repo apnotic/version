@@ -7,6 +7,7 @@
 == Description
 
 Version is a simple wrapper around the concept of version-numbering schemes.
+Prerelease versions are formatted with a dash separator (e.g., 1.0.0-a instead of 1.0.0a).
 
 == Features
 
@@ -41,10 +42,10 @@ Now `rake -T version` will tell you what all you can do.
   rake version:bump               # Bump to 0.1.1
   rake version:bump:major         # Bump to 1.0.0
   rake version:bump:minor         # Bump to 0.2.0
-  rake version:bump:pre           # Bump to 0.1.1a
-  rake version:bump:pre:major     # Bump to 1.0.0a
-  rake version:bump:pre:minor     # Bump to 0.2.0a
-  rake version:bump:pre:revision  # Bump to 0.1.1a
+  rake version:bump:pre           # Bump to 0.1.1-a
+  rake version:bump:pre:major     # Bump to 1.0.0-a
+  rake version:bump:pre:minor     # Bump to 0.2.0-a
+  rake version:bump:pre:revision  # Bump to 0.1.1-a
   rake version:bump:revision      # Bump to 0.1.1
   rake version:create             # Creates a version file with an optional VERSION parameter
 
@@ -52,7 +53,7 @@ Now `rake -T version` will tell you what all you can do.
   $ rake version:bump                 # => 0.1.1
   $ rake version:bump:minor           # => 0.2.0
   $ rake version:bump:revision        # => 0.2.1
-  $ rake version:bump:pre             # => 0.2.2a
+  $ rake version:bump:pre             # => 0.2.2-a
   $ rake version:bump                 # => 0.2.2
   $ rake version:bump:major           # => 1.0.0
   $ rake version:bump:minor           # => 1.1.0
@@ -117,6 +118,7 @@ beyond doing the legwork for the Rake task and class versioning.
   v.bump!                      # => 1.2.1
   v.bump!(:major)              # => 2.0.0
   v.bump!(:minor, false, true) # => 2.1
+  v.bump!(:pre)                # => 2.1-a
   v.major = 3                  # => 3.0
   v.to_a                       # => ['3', '0']
   
